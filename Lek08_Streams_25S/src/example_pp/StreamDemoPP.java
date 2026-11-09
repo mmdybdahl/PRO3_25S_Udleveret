@@ -39,21 +39,21 @@ public class StreamDemoPP {
                 .mapToInt(e -> e.length()).max()
                 .getAsInt();
         System.out.println("Langste ord: " + max);
-
+//
         String[] shop = {"Lidl", "Aldi", "Netto", "Føtex", "Lidl", "Netto", "365", "Kvickley", "Netto", "Super Brugsen"};
 
         Stream<String> stream = Stream.of(shop);
         System.out.println("Count: "+ stream.count());
-    //    System.out.println("Count distinct: " + stream.distinct().count());
+  //     System.out.println("Count distinct: " + stream.distinct().count());
        System.out.println("Count distinct: " + Stream.of(shop).distinct().count());
-//
+////
          System.out.println("Count limit: " + Stream.of(shop).limit(5).distinct().count());
-//
+////
         Object[] result = Stream.of(shop)
                 .limit(5)
                 .sorted().toArray();
         System.out.println(Arrays.toString(result));
-////
+//////
         result = Stream.of(shop)
                 .limit(5)
                 .sorted((e1, e2) -> e1.length() - e2.length()).toArray();
@@ -61,16 +61,16 @@ public class StreamDemoPP {
 ////
         Object[] result2 = Stream.of(shop).map(e -> e.charAt(0)).toArray();
         System.out.println(Arrays.toString(result2));
-
-        /// senere   er på PP
-
-        int[] antal = {1, 2, 3, 4, 5, 6};
-        int sum = IntStream.of(antal).reduce(0, (e1, e2) -> e1 + e2);
-        System.out.println("Sum er: " + sum);
-        int mul = IntStream.of(antal).reduce(1, (e1, e2) -> e1 * e2);
-        System.out.println("Mul er: " + mul);
-        System.out.println("Værdierne er: ");
-        System.out.println(IntStream.of(antal).mapToObj(e -> "" + e).reduce((e1, e2) -> e1 + " " + e2).get());
+//
+//        /// senere   er på PP
+//
+//        int[] antal = {1, 2, 3, 4, 5, 6};
+//        int sum = IntStream.of(antal).reduce(0, (e1, e2) -> e1 + e2);
+//        System.out.println("Sum er: " + sum);
+//        int mul = IntStream.of(antal).reduce(1, (e1, e2) -> e1 * e2);
+//        System.out.println("Mul er: " + mul);
+//        System.out.println("Værdierne er: ");
+//        System.out.println(IntStream.of(antal).mapToObj(e -> "" + e).reduce((e1, e2) -> e1 + " " + e2).get());
 
 //
 //        List<String> list = wordList.stream()
